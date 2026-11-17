@@ -28,6 +28,11 @@ class TestContactManager(unittest.TestCase):
         self.m.add(Contact('Alice Smith', '123', 'a@example.com'))
         self.assertEqual(len(self.m.find_by_name('SMITH')), 1)
 
+    def test_empty_name_search(self):
+        self.m.add(Contact('Sarah Ahmed', '07123456789', 'sarah@gmail.com'))
+        self.assertEqual(self.m.find_by_name(''), [])
+        self.assertEqual(self.m.find_by_name('   '), [])
+
     def test_update(self):
         self.m.add(Contact('Alice', '123', 'a@example.com'))
         self.assertTrue(self.m.update('a@example.com', phone='999'))
