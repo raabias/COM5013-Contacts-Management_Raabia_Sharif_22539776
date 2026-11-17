@@ -31,6 +31,10 @@ class ContactManager:
 
     def find_by_name(self, text):
         query = text.casefold().strip()
+
+        if not query:
+            return []
+
         return [c for c in self.contacts.values() if query in c.name.casefold()]
 
     def update(self, email, name=None, phone=None, address=None):
