@@ -29,6 +29,7 @@ class ContactManager:
     def find_by_email(self, email):
         return self.contacts.get(email.strip().lower())
 
+
     def find_by_name(self, text):
         query = text.casefold().strip()
 
@@ -36,6 +37,7 @@ class ContactManager:
             return []
 
         return [c for c in self.contacts.values() if query in c.name.casefold()]
+
 
     def update(self, email, name=None, phone=None, address=None):
         contact = self.find_by_email(email)
