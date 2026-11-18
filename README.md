@@ -51,7 +51,7 @@ Run the tests using:
 
 `python -m unittest -v`
 
-Testing covers core contact management operations and edge cases.
+The application has 10 automated unit tests that check adding, searching, updating, deleting, and sorting contacts. These tests also look for duplicate email addresses, invalid email formats, case-insensitive searches, empty name searches, and how the system handles 1,000 contacts. All 10 tests passed without any problems.
 
 ## Module Information
 
